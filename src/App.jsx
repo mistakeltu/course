@@ -30,7 +30,11 @@ const App = () => {
 
   //Reminder
   const toggleReminder = (id) => {
-    setTask(tasks.map(task));
+    setTask(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
   };
 
   return (
